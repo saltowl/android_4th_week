@@ -29,7 +29,7 @@ public class FirstActivityFragment extends Fragment
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState)
     {
-        View v = inflater.inflate(R.layout.activity_first, container, false);
+        View v = inflater.inflate(R.layout.main_activity, container, false);
         setHasOptionsMenu(true);
         return v;
     }

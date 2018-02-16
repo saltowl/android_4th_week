@@ -3,4 +3,8 @@
     <string name="menu_settings">Настройки</string>
     <string name="menu_search">Поиск</string>
     <string name="menu_exit">Выход</string>
+    <string name="google_search">Google</string>
+    <string name="yandex_search">Яндекс</string>
+    <string name="bing_search">Bing</string>
+    <string name="click_button">Search</string>
 </resources>

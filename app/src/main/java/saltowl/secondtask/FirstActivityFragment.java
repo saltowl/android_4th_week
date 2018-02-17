@@ -30,6 +30,10 @@ public class FirstActivityFragment extends Fragment
                              @Nullable Bundle savedInstanceState)
     {
         View v = inflater.inflate(R.layout.main_activity, container, false);
+        getFragmentManager()
+                .beginTransaction()
+                .addToBackStack(FirstActivityFragment.class.getName())
+                .commit();
         setHasOptionsMenu(true);
         return v;
     }
@@ -47,13 +51,19 @@ public class FirstActivityFragment extends Fragment
         switch (item.getItemId())
         {
             case R.id.actionSettings:
-                showMessage(R.string.menu_settings);
+                //showMessage(R.string.menu_settings);
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragmentContainer, SettingsFragment.newInstance())
+                        .addToBackStack(SettingsFragment.class.getName())
+                        .commit();
                 break;
             case R.id.actionSearch:
                 showMessage(R.string.menu_search);
                 break;
             case R.id.actionExit:
                 showMessage(R.string.menu_exit);
+                getActivity().finish();
                 break;
             default:
                 break;

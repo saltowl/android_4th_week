@@ -6,22 +6,29 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp">
 
-    <RadioButton
-        android:id="@+id/googleButton"
+    <RadioGroup
+        android:id="@+id/searchGroup"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/google_search"/>
+        android:layout_height="wrap_content">
 
-    <RadioButton
-        android:id="@+id/yandexButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/yandex_search" />
+        <RadioButton
+            android:id="@+id/googleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/google_search"/>
 
-    <RadioButton
-        android:id="@+id/bingButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/bing_search"/>
+        <RadioButton
+            android:id="@+id/yandexButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/yandex_search" />
+
+        <RadioButton
+            android:id="@+id/bingButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bing_search"/>
+
+    </RadioGroup>
 
 </LinearLayout>

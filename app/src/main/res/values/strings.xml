@@ -7,4 +7,5 @@
     <string name="yandex_search">Яндекс</string>
     <string name="bing_search">Bing</string>
     <string name="click_button">Search</string>
+    <string name="nothing_chosen">Ничего не выбрано</string>
 </resources>

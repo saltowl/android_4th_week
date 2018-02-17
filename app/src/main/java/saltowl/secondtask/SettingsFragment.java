@@ -17,8 +17,10 @@ import static android.content.Context.MODE_PRIVATE;
 public class SettingsFragment extends Fragment
 {
     private RadioGroup radioGroup;
+
     public static final String APP_PREFERENCES = "mysettings";
     final String KEY_RADIOBUTTON_INDEX = "SAVED_RADIO_BUTTON_INDEX";
+    final String KEY_RADIOBUTTON_VALUE = "SAVED_RADIO_BUTTON_VALUE";
 
     public static SettingsFragment newInstance()
     {
@@ -55,12 +57,15 @@ public class SettingsFragment extends Fragment
                     break;
                 case R.id.googleButton:
                     showMessage(R.string.google_search);
+                    SavePreferencesSearcher(KEY_RADIOBUTTON_VALUE, "https://www.google.com/#q=");
                     break;
                 case R.id.yandexButton:
                     showMessage(R.string.yandex_search);
+                    SavePreferencesSearcher(KEY_RADIOBUTTON_VALUE, "https://www.yandex.ru/search/?lr=&text=");
                     break;
                 case R.id.bingButton:
                     showMessage(R.string.bing_search);
+                    SavePreferencesSearcher(KEY_RADIOBUTTON_VALUE, "https://www.bing.com/search?q=");
                     break;
 
                 default:
@@ -77,6 +82,14 @@ public class SettingsFragment extends Fragment
                 APP_PREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(key, value).apply();
+    }
+
+    private void SavePreferencesSearcher(String key, String value)
+    {
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(
+                APP_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key, value).apply();
     }
 
     private void LoadPreferences()
